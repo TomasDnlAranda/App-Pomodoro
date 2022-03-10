@@ -38,19 +38,28 @@ form {
 	color: #fff;
 	cursor: pointer;
 }
-#container-tasks #init-task {
+#container-tasks .init-task {
 	display: flex;
 	justify-content: start;
 	margin-top: 0.5rem;
+	padding: 0.25rem 1rem;
 }
-#container-tasks div button {
+#container-tasks div .init-btn {
 	background: rgb(174, 0, 255);
 	border: none;
 	color: #fff;
 	cursor: pointer;
 }
-#container-tasks div span {
+#container-tasks div .del-task {
+	background: rgb(212, 0, 0);
+	border: none;
 	color: #fff;
+	cursor: pointer;
+	margin-left: 0.5rem;
+	margin-right: 1rem;
+}
+#container-tasks div span {
+	color: rgb(255, 255, 255);
 	margin-left: 1rem;
 }
 .task-schedule-none {
