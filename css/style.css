@@ -59,3 +59,18 @@ form {
 	margin-top: -1rem;
 	display: none;
 }
+.alert {
+	color: rgb(221, 0, 0);
+	font-size: 0.75rem;
+	display: flex;
+	align-content: flex-start;
+	justify-content: center;
+}
+.alert-none {
+	color: rgb(221, 0, 0);
+	font-size: 0.75rem;
+	display: flex;
+	align-content: flex-start;
+	justify-content: center;
+	display: none;
+}
