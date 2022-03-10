@@ -1,0 +1,61 @@
+body {
+	background: rgb(74, 0, 134);
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+	background: rgba(0, 0, 0, 0.5);
+	filter: blur(0.2px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	padding: 2rem;
+	margin: 4rem auto;
+}
+#schedule {
+	font-size: 7.5rem;
+	color: #fff;
+}
+form {
+	display: flex;
+}
+#task-input {
+	font-size: 1.25rem;
+}
+#container-tasks {
+	margin: 3.5rem 0;
+}
+#btn-task {
+	font-size: 1rem;
+	padding: 0.25rem 0.5rem;
+	background-color: rgb(174, 0, 255);
+	border: none;
+	margin: 0 0.75rem;
+	color: #fff;
+	cursor: pointer;
+}
+#container-tasks #init-task {
+	display: flex;
+	justify-content: start;
+	margin-top: 0.5rem;
+}
+#container-tasks div button {
+	background: rgb(174, 0, 255);
+	border: none;
+	color: #fff;
+	cursor: pointer;
+}
+#container-tasks div span {
+	color: #fff;
+	margin-left: 1rem;
+}
+.task-schedule-none {
+	color: #fff;
+	margin-bottom: 1rem;
+	margin-top: -1rem;
+	display: none;
+}

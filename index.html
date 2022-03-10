@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Project - App de Pomodoro</title>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div id="schedule">00:00</div>
+			<span class="task-schedule-none task-schedule">terminar codigo</span>
+			<form>
+				<input type="text" name="task" id="task-input" autocomplete="off" />
+				<input type="submit" name="submit" value="Ingrese tarea" id="btn-task" />
+			</form>
+			<div id="container-tasks"></div>
+		</div>
+		<template id="templateTask">
+			<div id="init-task">
+				<button>iniciar</button>
+				<span>task dato</span>
+			</div>
+		</template>
+	</body>
+</html>
