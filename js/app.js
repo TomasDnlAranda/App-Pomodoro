@@ -4,7 +4,7 @@ const inputTask = document.getElementById('task-input');
 const renderTask = document.getElementById('container-tasks');
 const templateTask = document.getElementById('templateTask').content;
 
-const tasks = [];
+let tasks = [];
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
@@ -35,6 +35,7 @@ const getTask = (task) => {
 };
 
 const renderTemplateTask = () => {
+	localStorage.setItem('task', JSON.stringify(tasks));
 	renderTask.textContent = '';
 	const fragment = document.createDocumentFragment();
 
@@ -45,3 +46,10 @@ const renderTemplateTask = () => {
 	});
 	renderTask.appendChild(fragment);
 };
+
+document.addEventListener('DOMContentLoaded', (e) => {
+	if (localStorage.getItem('task')) {
+		tasks = JSON.parse(localStorage.getItem('task'));
+		renderTemplateTask();
+	}
+});
