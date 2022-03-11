@@ -113,7 +113,7 @@ document.addEventListener('click', (e) => {
 					taskSchedule.textContent = item.task;
 					timerRender(e);
 					renderTemplateTask();
-				} else {
+				} else if (item.status === 'iniciar') {
 					item.status = 'Espera';
 					renderTemplateTask();
 				}
@@ -124,11 +124,15 @@ document.addEventListener('click', (e) => {
 		tasks.forEach((item) => {
 			if (e.target.dataset.id === item.id) {
 				tasks = tasks.filter((item) => e.target.dataset.id !== item.id);
-				renderTemplateTask(e);
-				clearInterval(timer);
 				time = 0;
 				validation = true;
+				renderTemplateTask(e);
+				clearInterval(timer);
 				renderTime();
+				if (item.status === 'Progreso') {
+					taskSchedule.textContent = '';
+					renderTemplateTask(e);
+				}
 			}
 		});
 	}
