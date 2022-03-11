@@ -62,11 +62,11 @@ form {
 	color: rgb(255, 255, 255);
 	margin-left: 1rem;
 }
-.task-schedule-none {
-	color: #fff;
+.task-schedule {
+	color: rgb(255, 238, 0);
 	margin-bottom: 1rem;
 	margin-top: -1rem;
-	display: none;
+	font-size: 1.5rem;
 }
 .alert {
 	color: rgb(221, 0, 0);
