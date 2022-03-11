@@ -128,6 +128,7 @@ document.addEventListener('click', (e) => {
 				validation = true;
 				renderTemplateTask(e);
 				clearInterval(timer);
+				clearInterval(timerBr);
 				renderTime();
 				if (item.status === 'Progreso') {
 					taskSchedule.textContent = '';
