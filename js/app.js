@@ -124,14 +124,15 @@ document.addEventListener('click', (e) => {
 		tasks.forEach((item) => {
 			if (e.target.dataset.id === item.id) {
 				tasks = tasks.filter((item) => e.target.dataset.id !== item.id);
-				time = 0;
 				validation = true;
 				renderTemplateTask(e);
-				clearInterval(timer);
-				clearInterval(timerBr);
 				renderTime();
 				if (item.status === 'Progreso') {
+					time = 0;
 					taskSchedule.textContent = '';
+					renderTime();
+					clearInterval(timer);
+					clearInterval(timerBr);
 					renderTemplateTask(e);
 				}
 			}
