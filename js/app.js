@@ -42,6 +42,8 @@ const renderTemplateTask = () => {
 	tasks.forEach((item) => {
 		const clone = templateTask.cloneNode(true);
 		clone.querySelector('span').textContent = item.task;
+		clone.querySelector('.init-btn').dataset.id = item.id;
+		clone.querySelector('.del-task').dataset.id = item.id;
 		fragment.appendChild(clone);
 	});
 	renderTask.appendChild(fragment);
@@ -51,5 +53,23 @@ document.addEventListener('DOMContentLoaded', (e) => {
 	if (localStorage.getItem('task')) {
 		tasks = JSON.parse(localStorage.getItem('task'));
 		renderTemplateTask();
+	}
+});
+
+document.addEventListener('click', (e) => {
+	if (e.target.matches('.init-btn')) {
+		tasks.forEach((item) => {
+			if (e.target.dataset.id === item.id) {
+				console.log('si');
+			}
+		});
+	}
+	if (e.target.matches('.del-task')) {
+		tasks.forEach((item) => {
+			if (e.target.dataset.id === item.id) {
+				tasks = tasks.filter((item) => e.target.dataset.id !== item.id);
+				renderTemplateTask();
+			}
+		});
 	}
 });
