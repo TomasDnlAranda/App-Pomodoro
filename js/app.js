@@ -10,6 +10,7 @@ const formSetting = document.getElementById('form-setting');
 const setting = document.querySelector('.container-setting');
 const btnPlay = document.querySelector('.bi-play-circle-fill');
 const btnPause = document.querySelector('.bi-stop-circle-fill');
+const valueSettings = document.querySelector('#form-setting > input[type=submit]:nth-child(5)');
 
 let time = 0;
 let timer = null;
@@ -22,7 +23,8 @@ const getTask = (task) => {
 	tasksObject = {
 		task: task,
 		id: `${Date.now()}`,
-		status: 'iniciar',
+		status: 'Iniciar',
+		color: valueSettings.dataset.color,
 	};
 	tasks.push(tasksObject);
 };
@@ -34,10 +36,11 @@ const renderTemplateTask = () => {
 
 	tasks.forEach((item) => {
 		const clone = templateTask.cloneNode(true);
-		clone.querySelector('span').textContent = item.task;
+		clone.querySelector('span cite').textContent = item.task;
 		clone.querySelector('.init-btn').dataset.id = item.id;
 		clone.querySelector('.init-btn').textContent = item.status;
 		clone.querySelector('.del-task').dataset.id = item.id;
+		clone.querySelector('span cite').style.color = item.color;
 		fragment.appendChild(clone);
 	});
 	renderTask.appendChild(fragment);
@@ -87,7 +90,7 @@ const timeBreackHandler = () => {
 		validation = true;
 		taskSchedule.textContent = '';
 		tasks.forEach((item) => {
-			item.status = 'iniciar';
+			item.status = 'Iniciar';
 		});
 		schedule.textContent = '00:10';
 		clearInterval(timerBr);
@@ -105,7 +108,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 	if (localStorage.getItem('task')) {
 		tasks = JSON.parse(localStorage.getItem('task'));
 		tasks.forEach((item) => {
-			item.status = 'iniciar';
+			item.status = 'Iniciar';
 		});
 		renderTemplateTask();
 	}
@@ -127,7 +130,7 @@ document.addEventListener('click', (e) => {
 					clearInterval(timer);
 					timerRender(e);
 					renderTemplateTask();
-				} else if (item.status === 'iniciar') {
+				} else if (item.status === 'Iniciar') {
 					item.status = 'Espera';
 					renderTemplateTask();
 				}
@@ -195,12 +198,14 @@ form.addEventListener('submit', (e) => {
 formSetting.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const formDataSetting = new FormData(formSetting);
-	const [minutes] = [...formDataSetting.values()];
+	const [minutes, color] = [...formDataSetting.values()];
+	console.log(color);
 	btnPlay.style.display = 'flex';
 	btnPause.style.display = 'none';
 	parseInt(minutes);
 	clearInterval(timer);
 	schedule.dataset.minutes = minutes;
 	schedule.textContent = `${minutes < 10 ? '0' : ''}${minutes}:00`;
+	valueSettings.dataset.color = color;
 	setting.style.display = 'none';
 });

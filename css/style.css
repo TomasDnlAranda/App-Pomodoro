@@ -1,36 +1,45 @@
-body {
-	background: rgb(74, 0, 134);
+* {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+}
+
+body {
+	background: rgb(74, 0, 134);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container {
 	background: rgba(0, 0, 0, 0.5);
 	filter: blur(0.2px);
 	display: flex;
+	position: relative;
+	top: 0;
+	left: 0;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 80%;
-	padding: 2rem;
+	width: 85%;
+	padding: 0.5rem;
 	margin: 4rem auto;
+	height: auto;
 }
 #schedule {
-	font-size: 7.5rem;
+	font-size: 3rem;
 	color: #fff;
 }
 form {
 	display: flex;
+	width: 100%;
+	justify-content: center;
 }
 #task-input {
-	font-size: 1.25rem;
+	font-size: 0.75rem;
 }
 #container-tasks {
-	margin: 3.5rem 0;
+	margin: 1rem 0;
 }
 #btn-task {
-	font-size: 1rem;
+	font-size: 0.5rem;
 	padding: 0.25rem 0.5rem;
 	background-color: rgb(174, 0, 255);
 	border: none;
@@ -40,7 +49,7 @@ form {
 }
 #container-tasks .init-task {
 	display: flex;
-	justify-content: start;
+	justify-content: space-between;
 	margin-top: 0.5rem;
 	padding: 0.25rem 1rem;
 }
@@ -48,15 +57,19 @@ form {
 	background: rgb(174, 0, 255);
 	border: none;
 	color: #fff;
+	font-size: 0.5rem;
 	cursor: pointer;
+	padding: 3px 10px;
 }
 #container-tasks div .del-task {
 	background: rgb(212, 0, 0);
 	border: none;
 	color: #fff;
+	font-size: 0.5rem;
 	cursor: pointer;
 	margin-left: 0.5rem;
-	margin-right: 1rem;
+	margin-right: 5rem;
+	padding: 3px 10px;
 }
 #container-tasks div span {
 	color: rgb(255, 255, 255);
@@ -65,15 +78,17 @@ form {
 .task-schedule {
 	color: rgb(255, 238, 0);
 	margin-bottom: 1rem;
-	margin-top: -1rem;
-	font-size: 1.5rem;
+	margin-top: 0rem;
+	font-size: 1rem;
 }
 .alert {
 	color: rgb(221, 0, 0);
 	font-size: 0.75rem;
 	display: flex;
 	align-content: flex-start;
-	justify-content: center;
+	justify-content: start;
+	width: 17rem;
+	margin-top: 0.5rem;
 }
 .alert-none {
 	color: rgb(221, 0, 0);
@@ -85,23 +100,22 @@ form {
 }
 .bi-gear-fill {
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	position: absolute;
-	top: 0;
-	left: 97%;
+	top: 0.25rem;
+	right: 0.25rem;
 	cursor: pointer;
 }
-
 .container-setting {
 	position: absolute;
 	top: 0;
-	left: 77.5%;
+	top: 10rem;
+	right: 0.25rem;
 	padding: 2.5rem;
 	margin-top: 2rem;
-	background-color: rgba(163, 82, 255, 0.363);
+	background-color: rgb(10, 0, 95);
 	display: none;
 }
-
 #form-setting {
 	display: flex;
 	flex-direction: column;
@@ -111,25 +125,46 @@ form {
 	color: aliceblue;
 	margin-bottom: 0.25rem;
 }
-
-#form-setting > input[type='submit']:nth-child(3) {
-	position: absolute;
-	top: 80%;
-	left: 80%;
-	cursor: pointer;
-	border: none;
-	background: skyblue;
-}
 .bi-play-circle-fill {
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	margin-bottom: 2rem;
 	cursor: pointer;
 }
 .bi-stop-circle-fill {
 	color: #fff;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	margin-bottom: 2rem;
 	cursor: pointer;
 	display: none;
+}
+#form-setting > span:nth-child(3) {
+	margin-top: 0.75rem;
+}
+#form-setting > input[type='submit']:nth-child(5) {
+	position: absolute;
+	top: 80%;
+	left: 90%;
+	padding: 2px;
+	cursor: pointer;
+	border: none;
+	background: skyblue;
+}
+@media (min-width: 758px) {
+	#schedule {
+		font-size: 7rem;
+	}
+	#task-input {
+		width: 16rem;
+	}
+	#btn-task {
+		font-size: 0.75rem;
+	}
+	.bi-play-circle-fill,
+	.bi-stop-circle-fill {
+		font-size: 1.25rem;
+	}
+	.container-setting {
+		top: 0;
+	}
 }
