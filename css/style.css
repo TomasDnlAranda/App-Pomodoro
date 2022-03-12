@@ -83,7 +83,7 @@ form {
 	justify-content: center;
 	display: none;
 }
-i {
+.bi-gear-fill {
 	color: #fff;
 	font-size: 1.5rem;
 	position: absolute;
@@ -119,4 +119,17 @@ i {
 	cursor: pointer;
 	border: none;
 	background: skyblue;
+}
+.bi-play-circle-fill {
+	color: #fff;
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+	cursor: pointer;
+}
+.bi-stop-circle-fill {
+	color: #fff;
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+	cursor: pointer;
+	display: none;
 }
