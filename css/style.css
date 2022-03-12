@@ -83,3 +83,40 @@ form {
 	justify-content: center;
 	display: none;
 }
+i {
+	color: #fff;
+	font-size: 1.5rem;
+	position: absolute;
+	top: 0;
+	left: 97%;
+	cursor: pointer;
+}
+
+.container-setting {
+	position: absolute;
+	top: 0;
+	left: 77.5%;
+	padding: 2.5rem;
+	margin-top: 2rem;
+	background-color: rgba(163, 82, 255, 0.363);
+	display: none;
+}
+
+#form-setting {
+	display: flex;
+	flex-direction: column;
+}
+#form-setting span {
+	font-size: 0.75rem;
+	color: aliceblue;
+	margin-bottom: 0.25rem;
+}
+
+#form-setting > input[type='submit']:nth-child(3) {
+	position: absolute;
+	top: 80%;
+	left: 80%;
+	cursor: pointer;
+	border: none;
+	background: skyblue;
+}

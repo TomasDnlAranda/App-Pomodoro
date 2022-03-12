@@ -6,10 +6,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Project - App de Pomodoro</title>
 		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
 	</head>
 	<body>
 		<div class="container">
-			<div id="schedule">00:00</div>
+			<i class="bi bi-gear-fill"></i>
+			<div class="container-setting">
+				<form id="form-setting">
+					<span>Ingrese los minutos que quiera</span>
+					<input type="number" name="minute" value="10" />
+					<input type="submit" value="ok" />
+				</form>
+			</div>
+			<div id="schedule" data-minutes="10">10:00</div>
 			<span class="task-schedule"></span>
 			<form id="formulario">
 				<input type="text" name="task" id="task-input" autocomplete="off" />
