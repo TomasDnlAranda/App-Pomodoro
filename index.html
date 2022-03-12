@@ -13,8 +13,10 @@
 			<i class="bi bi-gear-fill"></i>
 			<div class="container-setting">
 				<form id="form-setting">
-					<span>Ingrese los minutos que quiera</span>
+					<span>Ingrese los minutos para las tareas</span>
 					<input type="number" name="minute" value="10" max="25" />
+					<span>color de las tareas</span>
+					<input type="color" name="color" data-color="#fff" />
 					<input type="submit" value="ok" />
 				</form>
 			</div>
@@ -31,9 +33,11 @@
 		</div>
 		<template id="templateTask">
 			<div class="init-task">
-				<button class="init-btn">Iniciar</button>
-				<button class="del-task">Borrar</button>
-				<span>task dato</span>
+				<div>
+					<button class="init-btn">Iniciar</button>
+					<button class="del-task">Borrar</button>
+				</div>
+				<span><cite> task dato</cite></span>
 			</div>
 		</template>
 		<script src="./js/app.js"></script>
