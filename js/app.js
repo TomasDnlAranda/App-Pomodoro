@@ -8,6 +8,8 @@ const btnSetting = document.querySelector('.bi-gear-fill');
 const taskSchedule = document.querySelector('.task-schedule');
 const formSetting = document.getElementById('form-setting');
 const setting = document.querySelector('.container-setting');
+const btnPlay = document.querySelector('.bi-play-circle-fill');
+const btnPause = document.querySelector('.bi-stop-circle-fill');
 
 let time = 0;
 let timer = null;
@@ -117,8 +119,9 @@ document.addEventListener('click', (e) => {
 				console.log(item);
 				if (validation) {
 					validation = false;
+					btnPlay.style.display = 'none';
+					btnPause.style.display = 'none';
 					item.status = 'Progreso';
-					console.log(e.target);
 					taskSchedule.textContent = item.task;
 					btnSetting.style.display = 'none';
 					timerRender(e);
@@ -140,6 +143,7 @@ document.addEventListener('click', (e) => {
 					validation = true;
 					time = 0;
 					btnSetting.style.display = 'flex';
+					btnPlay.style.display = 'flex';
 					taskSchedule.textContent = '';
 					renderTime();
 					clearInterval(timer);
@@ -152,6 +156,18 @@ document.addEventListener('click', (e) => {
 	}
 	if (e.target.matches('.bi-gear-fill')) {
 		setting.style.display = 'flex';
+	}
+	if (e.target.matches('.bi-play-circle-fill')) {
+		timerRender();
+		btnPlay.style.display = 'none';
+		btnPause.style.display = 'flex';
+	}
+	if (e.target.matches('.bi-stop-circle-fill')) {
+		clearInterval(timer);
+		taskSchedule.textContent = '';
+		schedule.textContent = `${schedule.dataset.minutes < 10 ? '0' : ''}${schedule.dataset.minutes}:00`;
+		btnPlay.style.display = 'flex';
+		btnPause.style.display = 'none';
 	}
 });
 
@@ -180,6 +196,7 @@ formSetting.addEventListener('submit', (e) => {
 	const formDataSetting = new FormData(formSetting);
 	const [minutes] = [...formDataSetting.values()];
 	parseInt(minutes);
+	clearInterval(timer);
 	schedule.dataset.minutes = minutes;
 	schedule.textContent = `${minutes < 10 ? '0' : ''}${minutes}:00`;
 	setting.style.display = 'none';

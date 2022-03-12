@@ -14,11 +14,13 @@
 			<div class="container-setting">
 				<form id="form-setting">
 					<span>Ingrese los minutos que quiera</span>
-					<input type="number" name="minute" value="10" />
+					<input type="number" name="minute" value="10" max="25" />
 					<input type="submit" value="ok" />
 				</form>
 			</div>
 			<div id="schedule" data-minutes="10">10:00</div>
+			<i class="bi bi-play-circle-fill"></i>
+			<i class="bi bi-stop-circle-fill"></i>
 			<span class="task-schedule"></span>
 			<form id="formulario">
 				<input type="text" name="task" id="task-input" autocomplete="off" />
