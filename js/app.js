@@ -17,7 +17,6 @@ let timerBr = null;
 let validation = true;
 
 let tasks = [];
-const settings = [];
 
 const getTask = (task) => {
 	tasksObject = {
@@ -124,6 +123,8 @@ document.addEventListener('click', (e) => {
 					item.status = 'Progreso';
 					taskSchedule.textContent = item.task;
 					btnSetting.style.display = 'none';
+					schedule.textContent = `${schedule.dataset.minutes < 10 ? '0' : ''}${schedule.dataset.minutes}:00`;
+					clearInterval(timer);
 					timerRender(e);
 					renderTemplateTask();
 				} else if (item.status === 'iniciar') {
@@ -195,6 +196,8 @@ formSetting.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const formDataSetting = new FormData(formSetting);
 	const [minutes] = [...formDataSetting.values()];
+	btnPlay.style.display = 'flex';
+	btnPause.style.display = 'none';
 	parseInt(minutes);
 	clearInterval(timer);
 	schedule.dataset.minutes = minutes;
