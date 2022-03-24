@@ -8,6 +8,7 @@ technical skills applied in the project:
 
 * HTML 
 * JS 
+* BOOTSTRAP
 * JS VANILLA
 * CSS
 * RESPONSIVE DESIGN 100%
