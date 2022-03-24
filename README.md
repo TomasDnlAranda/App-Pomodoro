@@ -2,7 +2,7 @@
 
 _this is my application developed with vanilla js, it is a classic pomodoro application, with several interactive actions, and a task time and color configuration_
 
-[Demo](https://tomasdnlaranda.github.io/pomodoro-app////)
+[Demo](https://tomasdnlaranda.github.io/App-Pomodoro//)
 
 technical skills applied in the project:
 
