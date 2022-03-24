@@ -1,6 +1,6 @@
 # App-Pomdoro
 
-_This is my project where I create a credit card simulation where the user puts the card data and is filled in with the corresponding characters, each of the inputs is validated_
+_This is my application developed with vanilla js, it is a classic pomodoro application, with several interactive actions, and a small configuration_
 
 [Demo](https://tomasdnlaranda.github.io/pomodoro-app////)
 
